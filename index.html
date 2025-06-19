@@ -1,0 +1,49 @@
+<html>
+    <head>
+       <title>Home</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="icon" type="image/png" href="images/logo1.png">
+    </head>
+    <body class="firstpage">
+    <img src="images/logo1.png" link href="logo.html">
+       
+
+           <div class="menu-container">
+  <div class="dots" onclick="toggleMenu()">&#8942;</div>
+  <div class="dropdown" id="menu">
+    <a href="story.html">About</a>
+    <a href="Currency Ranking.html">Currency Ranking</a>
+    <a href="rating.html">Rating</a>
+  </div>
+</div>
+
+<script>
+
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  }
+
+  // Optional: Hide menu when clicking outside
+  window.addEventListener("click", function(e) {
+  if (!e.target.matches('.dots')) {
+    document.getElementById("menu").style.display = "none";
+  }
+});
+  
+</script>
+
+
+
+        
+    <div class="container">
+        <h1 class="welcome">welcome to</h1>
+        <br/>
+        <h1 class="content">Currency Converter</h1>
+        <br><br><br><br><br>
+        <div class="button">
+        <a href="currency converter.html">ENTER</a>
+        </div>
+    </div>
+    </body>
+</html>
