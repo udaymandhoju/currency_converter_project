@@ -1,12 +1,15 @@
-# Use stable Java 17 with Tomcat 9 (Render-compatible)
-FROM tomcat:9.0-jdk17
+# Use official Tomcat image with Java 17 (or choose the version you need)
+FROM tomcat:10.1-jdk17
 
-# Remove default webapps
+# Remove default webapps to keep container clean (optional)
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy your WAR as the root app
-COPY currencyconverterproject.war /usr/local/tomcat/webapps/ROOT.war
+# Copy your WAR file or the exploded webapp to Tomcat webapps folder
+# Assuming you have a WAR build in target/currencyConverter.war
+COPY target/currencyConverter.war /usr/local/tomcat/webapps/ROOT.war
 
+# Expose port 8080 for web traffic
 EXPOSE 8080
 
+# Default command to run Tomcat server
 CMD ["catalina.sh", "run"]
